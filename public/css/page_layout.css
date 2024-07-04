@@ -1,0 +1,81 @@
+/** default **/
+img {
+	object-fit: cover;
+}
+
+/* page type
+    single-page -> １ページ
+    whole-page -> 見開き
+*/
+section.single-page {
+	width: 50%;
+	height: 100%;
+}
+
+section.whole-page {
+	width: 100%;
+	height: 100%;
+}
+
+
+/* layout type
+	frame -> 額縁
+	fill -> ページ全体(余白なし)
+	border -> ページ全体(上下、左右いずれかに余白)
+*/
+
+div.layout_frame {
+	padding: 6.25% 5%;
+	height: 100%;
+}
+
+div.layout_frame > img,
+div.layout_fill > img,
+section.layout_fill > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+div.layout_border > img,
+section.layout_border > img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+/**
+分割方法
+split-vertical -> 縦に分割
+split-horizontal -> 横に分割
+
+equal-split-x -> x枚に均等分割
+**/
+
+section.split-vertical,
+div.split-vertical {
+	display: flex;
+	flex-direction: column;
+}
+
+section.split-horizontal,
+div.split-horizontal {
+	display: flex;
+	flex-direction: row;
+	flex: 1
+}
+
+.split-horizontal.equal-split-2 > div,
+.split-horizontal.equal-split-2 > img {
+	width: 50%;
+}
+
+.split-vertical.equal-split-2 > div,
+.split-vertical.equal-split-2 > img {
+	height: 50%;
+}
+
+.split-vertical.equal-split-3 > div,
+.split-vertical.equal-split-3 > img {
+	height: 33.33333%;
+}
