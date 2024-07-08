@@ -1,14 +1,107 @@
-section {
-	/* background-image: url('../template.png'); */
-	background-color: blanchedalmond;
-	/* background-size: contain; */
-}
+	section {
+		/* background-image: url('../template.png'); */
+		/* background-color: rgb(255, 248, 237); */
+		/* background-size: contain; */
+	}
 
-div#book_area {
-	/* width: 100%;
-	height: 100%; */
-	width: 1140px;
-	height: 806px;
-	/* overflow: hidden; */
-}
+	div#book_area {
+		margin: 0;
+		padding: 2%;
+		width: 100%;
+		height: 100%;
+		/* overflow: hidden; */
+		/* width: 1140px;
+		height: 806px; */
+	}
 
+	div#book {
+		width: 100%;
+		height: 100%;
+	}
+
+	.single-page {
+		position: relative;
+	}
+
+	/* ページの角落とし */
+	.cover-page.odd,
+	.cover-page.odd .cover-edge,
+	.inside-cover-page.odd,
+	.single-page.odd {
+		border-radius: 0 0.75dvw 0.75dvw 0;
+	}
+
+	.cover-page.even,
+	.cover-page.even .cover-edge,
+	.inside-cover-page.even,
+	.single-page.even {
+		border-radius: 0.75dvw 0 0 0.75dvw;
+	}
+
+	/* 表紙 De-boss 処理 */
+	.cover-edge {
+		position: absolute;
+		top:0;
+		width: 100%;
+		height: 100%;
+	}
+	#inside-front-cover .cover-edge {
+		box-shadow:
+			10px 10px 15px 0px inset #ccc,
+			10px -10px 15px 0px inset #ccc;
+	}
+
+	#inside-back-cover .cover-edge {
+		box-shadow:
+			-10px 10px 15px 0px inset #ccc,
+			-10px -10px 15px 0px inset #ccc;
+	}
+
+	#front-cover .cover-edge,
+	#back-cover .cover-edge {
+		box-shadow: 0 0 15px 0 inset #ccc;
+	}
+
+	/* 見返し em-boss処理 */
+	.inside-cover-page .cover-shadow {
+		position: absolute;
+		top: 0;
+		width: 5%;
+		height: 100%;
+	}
+
+	#inside-back-cover .cover-shadow {
+		left: 0;
+		box-shadow: -20px 0 20px -15px inset;
+	}
+
+	#inside-front-cover .cover-shadow {
+		right: 0;
+		box-shadow: 20px 0 20px -15px inset;
+	}
+
+	/* ページセンター影 */
+	.single-page .depth-shadow,
+	.inside-cover-page .depth-shadow{
+		position: absolute;
+		top: 0;
+		width: 5%;
+		height: 100%;
+	}
+
+	.odd .depth-shadow{
+		box-shadow: 20px 0 20px -20px #000 inset;
+		left: 0;
+	}
+
+	.even .depth-shadow{
+		box-shadow: -20px 0 20px -20px #000 inset;
+		right: 0;
+	}
+
+
+	.page-depth {
+		box-shadow: -10px 0 10px -5px #000, 10px 0 10px -5px #000;
+		border-radius: 10px;
+		background-image: url(../images/depth.png);
+	}

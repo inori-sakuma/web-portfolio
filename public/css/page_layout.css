@@ -7,9 +7,12 @@ img {
     single-page -> １ページ
     whole-page -> 見開き
 */
+section.cover-page,
+section.inside-cover-page,
 section.single-page {
 	width: 50%;
 	height: 100%;
+	overflow: hidden;
 }
 
 section.whole-page {
@@ -17,21 +20,22 @@ section.whole-page {
 	height: 100%;
 }
 
-
 /* layout type
 	frame -> 額縁
 	fill -> ページ全体(余白なし)
 	border -> ページ全体(上下、左右いずれかに余白)
 */
 
-div.layout_frame {
+section.layout_frame > div,
+div.layout_frame > div {
 	padding: 6.25% 5%;
 	height: 100%;
 }
 
-div.layout_frame > img,
 div.layout_fill > img,
-section.layout_fill > img {
+section.layout_fill > img,
+section.layout_frame > div > img,
+div.layout_frame > div > img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;

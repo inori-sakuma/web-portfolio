@@ -1,19 +1,26 @@
 const path = require('path');
+const webpack = require('webpack');
 const outputPath = path.resolve(__dirname, 'public')
 
 module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される
-  mode: 'development',
+  mode: 'production',
+  // mode: 'development',
 
   // メインとなるJavaScriptファイル（エントリーポイント）
-  entry: './src/main.ts',
-
+  entry: [
+    './src/main.ts',
+  ],
   output: {
     path: outputPath,
     filename: 'js/index.js'
   },
-
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+    })
+  ],
   devServer: {
   },
 

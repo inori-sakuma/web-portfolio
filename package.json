@@ -20,6 +20,6 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "turn.js": "^1.0.5"
+    "jquery": "^3.7.1"
   }
 }
