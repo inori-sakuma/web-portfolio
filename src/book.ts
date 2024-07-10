@@ -1,35 +1,35 @@
 import $ from 'jquery';
-import { Attribute, BookObject, BookSize, Cover, ElementId, PageSide } from "./book_object";
+import { Attribute, BookScheme, BookSize, Cover, ElementId, PageSide } from "./book_object";
 import { ElementAttribute } from './book_element_attribute';
 import { PageCreator } from './pager_creator';
 
 export class Book {
-    private book: BookObject
+    private bookScheme: BookScheme
     private bookSize: BookSize
     private elementAttr: ElementAttribute
     private pageCreator: PageCreator
-    private _pages: Array<JQuery<HTMLElement>> = []
+    public pages: Array<JQuery<HTMLElement>> = []
+    public isDevelop: boolean = false
 
     get size(): BookSize {
         return this.bookSize
     }
 
-    get pages(): Array<JQuery<HTMLElement>> {
-        return this._pages
+    get object(): BookScheme {
+        return this.bookScheme
     }
 
-    constructor(book: BookObject, bookAreaId: string = 'book_area') {
-        this.book = book
+    constructor(bookScheme: BookScheme, bookAreaId: string = 'book_area') {
+        this.bookScheme = bookScheme
         this.bookSize = this.calculateBookSize(bookAreaId)
-        this.elementAttr = new ElementAttribute(this.book, this.bookSize)
-        this.pageCreator = new PageCreator(this.book)
-
+        this.elementAttr = new ElementAttribute(this.bookScheme, this.bookSize)
+        this.pageCreator = new PageCreator(this.bookScheme)
     }
 
     private calculateBookSize(bookAreaId: string): BookSize {
         const odd = function(value: number) {return Math.floor(value / 2) * 2}
-        const widthPerPage = this.book.general.width * 2
-        const heightPerPage = this.book.general.height
+        const widthPerPage = this.bookScheme.general.width * 2
+        const heightPerPage = this.bookScheme.general.height
 
         const maxWidth = $(ElementId.getSelector(bookAreaId)).width()
         const maxHeight = $(ElementId.getSelector(bookAreaId)).height()
@@ -75,8 +75,11 @@ export class Book {
     }
 
     public create(): void {
-        this.generateCover()
         this.generatePages()
+        if (!this.isDevelop) {
+            this.wrapInsideCover()
+        }
+        this.generateCover()
     }
 
     /**
@@ -89,8 +92,12 @@ export class Book {
         )
 
         let frontCover = this.pageCreator.create(
-            this.book.cover, coverAttribute)
+            this.bookScheme.cover, coverAttribute)
 
+        if (this.isDevelop) {
+            this.pages.unshift(frontCover)
+            return
+        }
         // Coverを複製
         let backCover = frontCover.clone()
 
@@ -100,15 +107,9 @@ export class Book {
         backCover = Book.wrapSplittedPage(backCover, Cover.back,
             this.elementAttr.splittedCover(Cover.back))
 
-        // 見返しを作成
-        const frontInsideCover = this.createInsideCover(Cover.front)
-        const backInsideCover = this.createInsideCover(Cover.back)
-
         // ページを追加
-        this._pages.push(frontCover)
-        this._pages.push(frontInsideCover)
-        this._pages.push(backInsideCover)
-        this._pages.push(backCover)
+        this.pages.unshift(frontCover)
+        this.pages.push(backCover)
     }
 
     /**
@@ -116,50 +117,42 @@ export class Book {
      * @param pageType Cover.Front | Back
      * @returns 見返しのHTML Element
      */
-    private createInsideCover(pageType: Cover): JQuery<HTMLElement> {
-        const insideCover = $("<section>",
-            this.elementAttr.insideCover(pageType).toObject)
-        const insideCoverBlank = $("<div>",
-            this.elementAttr.insideCoverPage(pageType).toObject)
-        const pageDepth = $('<div>',
-            this.elementAttr.pageDepth(pageType).toObject)
-        const pageDepthImage = $('<div>',
-            this.elementAttr.pageDepthImage(pageType).toObject)
-
-        insideCover.append(insideCoverBlank)
-        insideCover.append(pageDepth)
-        pageDepth.append(pageDepthImage)
-        return insideCover
+    private wrapInsideCover(): void {
+        [Cover.front, Cover.back].forEach(pageType => {
+            const insideCover = $("<section>",
+                this.elementAttr.insideCover(pageType).toObject)
+            const pageNo = (pageType == Cover.front) ? 0 : this.pages.length - 1
+            this.pages[pageNo].css(this.elementAttr.insideCoverPage(pageType).styles)
+            insideCover.append(this.pages[pageNo])
+            this.pages[pageNo] = insideCover
+        })
     }
 
     /**
      * ページを作成する
      */
     public generatePages(): void {
-        const pageElements: Array<JQuery<HTMLElement>> = []
+        console.info(`Generate ${this.bookScheme.pages.length} page(s).`)
 
-        console.info(`Generate ${this.book.pages.length} page(s).`)
-
-        for (const page of this.book.pages) {
+        for (const page of this.bookScheme.pages) {
             console.info(`Generate ${page.index} page.`)
             const attribute = new Attribute({
                 styles: {
                     "background-color": (page.paperColor == null)
-                        ? this.book.general.paperColor : page.paperColor
+                        ? this.bookScheme.general.paperColor : page.paperColor
                 }
             })
             const pageElement = this.pageCreator.create(page, attribute)
-            if (page.pageType == "single") {
-                pageElements.push(pageElement)
+            if (page.pageType == "single" || this.isDevelop) {
+                this.pages.push(pageElement)
             } else {
                 const page2Element = pageElement.clone()
-                pageElements.push(
+                this.pages.push(
                     Book.wrapSplittedPage(page2Element, PageSide.Left))
-                pageElements.push(
+                this.pages.push(
                     Book.wrapSplittedPage(pageElement, PageSide.Right))
             }
         }
-        this._pages.splice(2, 0, ...pageElements)
     }
 
     /**

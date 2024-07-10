@@ -27,7 +27,7 @@ export class BookAction {
         const insideBackCoverSelector =
             ElementId.getSelector(ElementId.INSIDE_BACK_COVER)
 
-        if (page >= 6 ) {
+        if (page >= 5 ) {
             $(`${insideFrontCoverSelector} .depth`).show()
         } else {
             $(`${insideFrontCoverSelector} .depth`).hide()

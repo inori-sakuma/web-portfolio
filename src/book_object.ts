@@ -34,7 +34,29 @@ export interface BookSize {
     }
 }
 
-export interface BookObject {
+// ===== Book Schemeに関する定義 =====
+export enum PageType {
+    single = 'single',
+    whole = 'whole'
+}
+
+export enum LayoutType {
+    frame = 'frame',
+    fill = 'fill',
+    border = 'border',
+    horizontal = 'horizontal',
+    vertical = 'vertical'
+}
+
+export enum SplitRatio {
+    justification = 'justification',
+    framedJustification = 'framed-justification',
+    spacedJustification = 'spaced-justification',
+    borderedJustification = 'bordered-justification',
+    relative = 'relative'
+}
+
+export interface BookScheme {
     general: General
     cover: Page
     pages: Array<Page>
@@ -49,21 +71,26 @@ export interface General {
 
 export interface Page extends Layout {
     index: string
-    pageType: string
-    paperColor: string
+    pageType: PageType
+    paperColor?: string
 }
 
 export interface Layout {
-    layoutType: string
-    split: string | null
-    children: Array<string | Layout>
+    layoutType?: LayoutType
+    splitRatio?: SplitRatio | string
+    children?: Array<string | Layout | Image>
+    position?: string
+}
+
+export interface Image {
     src: string
-    position: string
+    align?: string
 }
 
 type AttributeArgument = {
     id?: string | null,
     src?: string | null,
+    depth?: number | null,
     classes?: Array<string>,
     styles?: Style
 }
@@ -72,16 +99,18 @@ type AttributeObject = {
     id?: string,
     src?: string,
     class?: string,
-    style?: string
+    style?: string,
+    depth?: number
 }
 
 export class Attribute {
     id: string | null
-    private src: string | null
+    public src: string | null
     private classes: Array<string>
-    private styles: Style
+    public styles: Style
+    private depth: number | null
 
-    public static create(width: number, height: number) {
+    public static create(width: number, height: number): Attribute {
         return new Attribute({styles: {
             width: `${width}px`,
             height: `${height}px`
@@ -89,10 +118,15 @@ export class Attribute {
         })
     }
 
+    public static createImage(src: string): Attribute {
+        return new Attribute({src: src})
+    }
+
     constructor(
-        {id = null, src = null, classes = [], styles = {}}: AttributeArgument = {}) {
+        {id = null, src = null, depth = null, classes = [], styles = {}}: AttributeArgument = {}) {
             this.id = id
             this.src = src
+            this.depth = depth
             this.classes = classes
             this.styles = styles
     }
@@ -120,6 +154,10 @@ export class Attribute {
             attribute.src = this.src
         }
 
+        if (this.depth != null) {
+            attribute.depth = this.depth
+        }
+
         if (this.classes.length != 0) {
             attribute.class = this.classes.join(' ')
         }
@@ -127,7 +165,8 @@ export class Attribute {
         if (Object.entries(this.styles).length != 0) {
             attribute.style = ""
             for (const [key, value] of Object.entries(this.styles)) {
-                attribute.style += `${key}: ${value}; `
+                const keyName = key.split(/(?=[A-Z])/).join('-').toLowerCase()
+                attribute.style += `${keyName}: ${value}; `
             }
         }
 

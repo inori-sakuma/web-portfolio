@@ -1,0 +1,577 @@
+{
+    "general": {
+        "width": 210,
+        "height": 297,
+        "baseImagePath": "./book/images/",
+        "paperColor": "#fff7f0"
+    },
+
+    "cover": {
+        "layoutType": "horizontal",
+        "splitRatio": "ratio(40:60)",
+        "paperColor": "#888",
+        "children": [
+            {
+                "layoutType": "vertical",
+                "splitRatio": "ratio(166:142)",
+                "children": [
+                    "2023-08-26/_D854790.jpg",
+                    "2023-08-27/_D854992.jpg"
+                ]
+            },
+            {
+                "layoutType": "fill",
+                "children": [
+                    {
+                        "src": "2023-08-31/_DSC5107.jpg",
+                        "align": "37.5% 0"
+                    }
+                ]
+            }
+        ]
+    },
+
+    "pages": [
+        {
+            "index": "1",
+            "pageType": "single"
+        },
+        {
+            "index": "2",
+            "pageType": "single",
+            "layoutType": "border",
+            "children": [
+                "2023-07-13/_DZ90456.jpg"
+            ]
+        },
+        {
+            "index": "3",
+            "pageType": "single",
+            "layoutType": "vertical",
+            "children": [
+                "2023-07-09/_DZ90172.jpg",
+                {
+                    "layoutType": "horizontal",
+                    "children": [
+                        {
+                            "layoutType": "vertical",
+                            "children": [
+                                "2023-07-09/_DZ90183.jpg",
+                                "2023-07-09/_DZ90189.jpg"
+                            ]
+                        },
+                        "2023-07-09/_DZ90186.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "index": "4",
+            "pageType": "single",
+            "layoutType": "vertical",
+            "children":[
+                "2023-07-09/_DZ90195.jpg",
+                "2023-07-09/_DZ90198.jpg"
+            ]
+        },
+        {
+            "index": "5",
+            "pageType": "single",
+            "layoutType": "vertical",
+            "children": [
+                "2023-07-09/_DZ90287.jpg",
+                "2023-07-09/_DZ90293.jpg"
+            ]
+        },
+        {
+            "index": "6",
+            "pageType": "single",
+            "layoutType": "frame",
+            "children": [
+                "2023-07-09/_DZ90377.jpg"
+            ]
+        },
+        {
+            "index": "7",
+            "pageType": "single",
+            "layoutType": "frame",
+            "children": [
+                "2023-07-30/_DSC0785.jpg"
+            ]
+        },
+        {
+            "index": "8",
+            "pageType": "single",
+            "layoutType": "vertical",
+            "children": [
+                "2023-07-30/_DSC0782.jpg",
+                "2023-07-30/_DSC0778.jpg"
+            ]
+        },
+        {
+            "index": "9",
+            "pageType": "single",
+            "layoutType": "fill",
+            "children": [
+                "2023-07-30/_DSC0831.jpg"
+            ]
+        },
+        {
+            "index": "10",
+            "pageType": "single",
+            "layoutType": "vertical",
+            "children": [
+                "2023-07-30/_DSC0846.jpg",
+                "2023-07-30/_DSC0807.jpg"
+            ]
+        },
+        {
+            "index": "11",
+            "pageType": "single",
+            "layoutType": "fill",
+            "children": [
+                "2023-07-30/_DSC0888.jpg"
+            ]
+        },
+        {
+            "index": "12",
+            "pageType": "single",
+            "layoutType": "vertical",
+            "splitRatio": "spaced-justification",
+            "children": [
+                "2023-07-30/_DSC0798.jpg",
+                "2023-07-30/_DSC0891.jpg",
+                "2023-07-30/_DSC0802.jpg"
+            ]
+        },
+        {
+            "index": "13",
+            "pageType": "single",
+            "layoutType": "border",
+            "children": [
+                "2023-07-31/_D853212.jpg"
+            ]
+        },
+        {
+            "index": "14",
+            "pageType": "single",
+            "layoutType": "border",
+            "children": [
+                "2023-08-03/_DSC0996.jpg"
+            ]
+        },
+        {
+            "index": "15",
+            "pageType": "single",
+            "layoutType": "vertical",
+            "children": [
+                "2023-08-05/_D853354.jpg",
+                "2023-08-05/_D853363.jpg"
+            ]
+        },
+        {
+            "index": "16",
+            "pageType": "single",
+            "layoutType": "vertical",
+            "children": [
+                "2023-08-05/_D853355.jpg",
+                "2023-08-05/_D853428.jpg"
+            ]
+        },
+        {
+            "index": "17",
+            "pageType": "single",
+            "layoutType": "vertical",
+            "children": [
+                "2023-08-05/_D853444.jpg",
+                "2023-08-05/_D853539.jpg"
+            ]
+        },
+        {
+            "index": "18",
+            "pageType": "single",
+            "layoutType": "vertical",
+            "children": [
+                "2023-08-05/_D853490.jpg",
+                "2023-08-05/_D853586.jpg"
+            ]
+        },
+        {
+            "index": "19",
+            "pageType": "single",
+            "layoutType": "fill",
+            "children": [
+                "2023-08-09/_D853649.jpg"
+            ]
+        },
+        {
+            "index": "20",
+            "pageType": "single",
+            "layoutType": "fill",
+            "children": [
+                "2023-08-09/_D853652.jpg"
+            ]
+        },
+        {
+            "index": "21",
+            "pageType": "single",
+            "layoutType": "fill",
+            "children": [
+                "2023-08-11/_D853722.jpg"
+            ]
+        },
+        {
+            "index": "22",
+            "pageType": "single",
+            "layoutType": "vertical",
+            "children": [
+                "2023-08-11/_D853743-NEF_DxO_DeepPRIMEXD.jpg",
+                "2023-08-11/_D853745-NEF_DxO_DeepPRIMEXD.jpg"
+            ]
+        },
+        {
+            "index": "23",
+            "pageType": "single",
+            "layoutType": "vertical",
+            "children": [
+                "2023-08-11/_D853751-NEF_DxO_DeepPRIMEXD.jpg",
+                "2023-08-11/_D853805-NEF_DxO_DeepPRIMEXD.jpg"
+            ]
+        },
+        {
+            "index": "24",
+            "pageType": "single",
+            "layoutType": "fill",
+            "children": [
+                "2023-08-11/_D853785-NEF_DxO_DeepPRIMEXD.jpg"
+            ]
+        },
+        {
+            "index": "25-26",
+            "pageType": "whole",
+            "layoutType": "vertical",
+            "children": [
+                {
+                    "layoutType": "horizontal",
+                    "children": [
+                        "2023-08-11/_D853793-NEF_DxO_DeepPRIMEXD.jpg",
+                        "2023-08-11/_D853867-NEF_DxO_DeepPRIMEXD.jpg",
+                        "2023-08-11/_D853878.jpg"
+                    ]
+                },
+                {
+                    "layoutType": "horizontal",
+                    "children": [
+                        "2023-08-11/_D853857-NEF_DxO_DeepPRIMEXD.jpg",
+                        "2023-08-11/_D853881.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "index": "27",
+            "pageType": "single",
+            "layoutType": "fill",
+            "children": [
+                "2023-08-21/_D854459.jpg"
+            ]
+        },
+        {
+            "index": "28",
+            "pageType": "single",
+            "layoutType": "vertical",
+            "children": [
+                "2023-08-21/_D854469.jpg",
+                "2023-08-21/_D854472.jpg"
+            ]
+        },
+        {
+            "index": "29",
+            "pageType": "single",
+            "layoutType": "border",
+            "children": [
+                "2023-08-21/_D854474.jpg"
+            ]
+        },
+        {
+            "index": "30",
+            "pageType": "single",
+            "layoutType": "vertical",
+            "children": [
+                "2023-08-21/_D854473.jpg",
+                "2023-08-21/_D854479.jpg"
+            ]
+        },
+        {
+            "index": "31",
+            "pageType": "single",
+            "layoutType": "vertical",
+            "splitRatio": "ratio(50:25:25)",
+            "children": [
+                "2023-08-27/_D854800.jpg",
+                {
+                    "src": "2023-08-27/_D854828.jpg",
+                    "align": "0 65%"
+                },
+                {
+                    "src": "2023-08-27/_D854830.jpg",
+                    "align": "0 62%"
+                }
+            ]
+        },
+        {
+            "index": "32",
+            "pageType": "single",
+            "layoutType": "fill",
+            "children": [
+                "2023-08-27/_D854808.jpg"
+            ]
+        },
+        {
+            "index": "33-34",
+            "pageType": "whole",
+            "layoutType": "vertical",
+            "splitRatio": "ratio(21:9)",
+            "children": [
+                {
+                    "layoutType": "horizontal",
+                    "splitRatio": "relative",
+                    "children": [
+                        "2023-08-27/DxO_DeepPRIMEXD__D854843-NEF_DxO_DeepPRIMEXD.jpg",
+                        {
+                            "layoutType": "vertical",
+                            "splitRatio": "ratio(35:65)",
+                            "children": [
+                                "2023-08-27/DxO_DeepPRIMEXD__D854880-NEF_DxO_DeepPRIMEXD.jpg",
+                                {
+                                    "src": "2023-08-27/_D854974.jpg",
+                                    "align": "0 100%"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "layoutType": "horizontal",
+                    "children": [
+                        "2023-08-27/DxO_DeepPRIMEXD__D854906-NEF_DxO_DeepPRIMEXD.jpg",
+                        "2023-08-27/DxO_DeepPRIMEXD__D854964-NEF_DxO_DeepPRIMEXD.jpg",
+                        "2023-08-27/_D854985.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "index": "35-36",
+            "pageType": "whole",
+            "layoutType": "horizontal",
+            "splitRatio": "ratio(235:185)",
+            "children": [
+                {
+                    "layoutType": "vertical",
+                    "children": [
+                        "2023-08-31/_DSC5107.jpg",
+                        "2023-08-31/_DSC5113.jpg"
+                    ]
+                },
+                {
+                    "layoutType": "fill",
+                    "children": [
+                        {
+                            "src": "2023-08-31/_DSC5238.jpg",
+                            "align": "0 0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "index": "37-38",
+            "pageType": "whole",
+            "layoutType": "horizontal",
+            "splitRatio": "ratio(30:12)",
+            "children": [
+                {
+                    "layoutType": "horizontal",
+                    "children": [
+                        {
+                            "layoutType": "vertical",
+                            "children": [
+                                "2023-08-31/_DSC5249.jpg",
+                                "2023-08-31/_DSC5262.jpg",
+                                "2023-08-31/_DSC5265.jpg"
+                            ]
+                        },
+                        {
+                            "layoutType": "vertical",
+                            "children": [
+                                "2023-08-31/_DSC5270.jpg",
+                                "2023-08-31/_DSC5277.jpg",
+                                "2023-08-31/_DSC5317.jpg"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "layoutType": "vertical",
+                    "splitRatio": "ratio(2:1)",
+                    "children": [
+                        "2023-08-31/_DSC5291.jpg",
+                        "2023-08-31/_DSC5370.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "index": "39-40",
+            "pageType": "whole",
+            "layoutType": "fill",
+            "children": [
+                "2023-08-31/_DSC5321.jpg"
+            ]
+        },
+        {
+            "index": "41-42",
+            "pageType": "whole",
+            "layoutType": "vertical",
+            "children": [
+                {
+                    "layoutType": "horizontal",
+                    "children": [
+                        {
+                            "layoutType": "horizontal",
+                            "children": [
+                                "2023-08-31/_DSC5319.jpg",
+                                "2023-08-31/_DSC5329.jpg"
+                            ]
+                        },
+                        "2023-08-31/_DSC5379.jpg"
+                    ]
+                },
+                {
+                    "layoutType": "horizontal",
+                    "splitRatio": "ratio(1:2:1)",
+                    "children": [
+                        "2023-08-31/_DSC5332.jpg",
+                        "2023-08-31/_DSC5328.jpg",
+                        "2023-08-31/_DSC5373.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "index": "43",
+            "pageType": "single",
+            "layoutType": "vertical",
+            "children": [
+                "2023-09-01/_DSC5468.jpg",
+                "2023-09-01/_DSC5479.jpg"
+            ]
+        },
+        {
+            "index": "44",
+            "pageType": "single",
+            "layoutType": "fill",
+            "children": [
+                "2023-09-01/_DSC5488.jpg"
+            ]
+        },
+        {
+            "index": "45-46",
+            "pageType": "whole",
+            "layoutType": "horizontal",
+            "splitRatio": "ratio(23:19)",
+            "children": [
+                {
+                    "layoutType": "vertical",
+                    "children": [
+                        "2023-09-24/_DSC2434.jpg",
+                        "2023-09-24/_DSC2444.jpg"
+                    ]
+                },
+                {
+                    "layoutType": "vertical",
+                    "children": [
+                        {
+                            "src": "2023-09-24/_DSC2442.jpg",
+                            "align": "0 0"
+                        },
+                        {
+                            "src": "2023-09-24/_DSC2447.jpg",
+                            "align": "0 0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "index": "47-48",
+            "pageType": "whole",
+            "layoutType": "border",
+            "children": [
+                "2023-09-24/_DSC2443.jpg"
+            ]
+        },
+        {
+            "index": "49-50",
+            "pageType": "whole",
+            "layoutType": "horizontal",
+            "splitRatio": "relative",
+            "children": [
+                "2023-09-24/_DSC2531.jpg",
+                {
+                    "layoutType": "vertical",
+                    "children": [
+                        "2023-09-24/DxO_DeepPRIMEXD__DSC2515-NEF_DxO_DeepPRIMEXD.jpg",
+
+                        {
+                            "src": "2023-09-24/_DSC2546.jpg",
+                            "align": "0 0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "index": "51-52",
+            "pageType": "whole",
+            "layoutType": "horizontal",
+            "splitRatio": "ratio(23:19)",
+            "children": [
+                {
+                    "layoutType": "vertical",
+                    "children": [
+                        "2023-09-24/_DSC2539.jpg",
+                        "2023-09-24/_DSC2615.jpg"
+                    ]
+                },
+                {
+                    "layoutType": "vertical",
+                    "splitRatio": "ratio(125:175)",
+                    "children": [
+                        {
+                            "src": "2023-09-24/_DSC2621.jpg",
+                            "align": "0 0"
+                        },
+                        {
+                            "src": "2023-09-24/_DSC2607.jpg",
+                            "align": "0 0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "index": "53",
+            "pageType": "single",
+            "layoutType": "border",
+            "children": [
+                "2023-09-24/DxO_DeepPRIMEXD__DSC2660-NEF_DxO_DeepPRIMEXD.jpg"
+            ]
+        },
+        {
+            "index": "54",
+            "pageType": "single"
+        }
+    ]
+}
